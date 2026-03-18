@@ -2,23 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>typing test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<section class="main-body">
-    <h2>typing Speed test</h2>
-    <p id="showSentence"></p>
-
-    <div class="typing_section">
-        <label for="textarea"></label>
-        <textarea name="textarea" id="textarea" cols="30" rows="10" disabled></textarea>
-        <br>
-        <button id="btn">Start</button>
+<section class="main-container">
+    <div class="header">
+        <h1>Typing Test</h1>
+        <div class="stats">
+            <div class="stat-box">
+                <span class="label">Time</span>
+                <span class="value" id="timeDisplay">0s</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">WPM</span>
+                <span class="value" id="wpm">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Accuracy</span>
+                <span class="value" id="accuracy">100%</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Best WPM</span>
+                <span class="value" id="bestWpm">0</span>
+            </div>
+        </div>
     </div>
 
-    <p id="score"></p>
+    <!-- Hidden input to capture keystrokes on desktop and mobile -->
+    <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+
+    <div class="quote-container wrapper">
+        <p id="quoteDisplay" class="quote-display">
+            <!-- Spans of characters will be injected here -->
+            Click "Start Game" to begin typing...
+        </p>
+    </div>
+
+    <div class="controls">
+        <button id="btn">Start Game</button>
+    </div>
 </section>
 
 <script src="js/index.js"></script>
